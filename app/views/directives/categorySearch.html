@@ -1,0 +1,26 @@
+<div class="category-search">
+	<input name="keywords" ng-model="keywords" placeholder="Enter keyword" class="keywords"/>
+	<button
+		ng-click="toggleCategories=!toggleCategories"
+		type="submit"
+		class="dropdown-toggle">In all categories<div class="arrow-down"></div></button>
+	<div class="category-container"
+		ng-show="toggleCategories">
+		<div class="block-title border-bottom">
+			<h2>Top categories</h2><p class="all-categories">Search in all categories</p>
+		</div>
+		<div class="top-categories">
+			<label ng-repeat="category in topCategories">
+				<input type="checkbox" value="second_checkbox">{{category.title}} ({{category.count}})
+			</label>
+		</div>
+		<div class="block-title border-bottom border-top">
+			<h2>More categories</h2>
+		</div>
+		<div class="more-categories">
+			<label ng-repeat="category in otherCategories">
+				<input type="checkbox" value="second_checkbox">{{category.title}} ({{category.count}})
+			</label>
+		</div>
+	</div>
+</div>

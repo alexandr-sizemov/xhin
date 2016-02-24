@@ -1,0 +1,97 @@
+$dropdown-toggle-bg-color: #EBEAEB;
+$dropdown-toggle-bg-color-hover: #D7D7D7;
+$arrow-size: 5px;
+$dropdown-toggle-color: #7D7D7D;
+$arrow-color: #7D7D7D;
+
+div.category-search{
+	width: 400px;
+	margin: 15px 15px 15px 0;
+	position: relative;
+	input.keywords {
+		@include border-radius(0);
+		@include border-radius-left($border-radius);
+		width: 50%;
+		height: 42px;
+		float: left;
+	}
+	button.dropdown-toggle{
+		@include border-radius-right($border-radius);
+		color: $dropdown-toggle-color;
+		text-align: left;
+		padding: 1px;		
+		width: 50%;
+		border:0;
+		height: 42px;
+		text-indent: 15px;
+		float: right;
+		background: $dropdown-toggle-bg-color;
+		cursor: pointer;
+		&:hover{
+			background: $dropdown-toggle-bg-color-hover;
+		}
+		div.arrow-down{
+			@include arrow-down($arrow-size, $arrow-color);
+			float: right;
+			margin: 7px 7px 0 0; 
+		}
+		div.arrow-up{
+			@include arrow-up($arrow-size, $arrow-color);
+		}
+	}
+	div.category-container{
+		@include border-radius($border-radius);
+		position: absolute;
+		display: flex;
+    	flex-flow: column wrap;
+		top: 42px;
+		background: white;
+		margin-top:5px;
+
+		div.block-title{
+			padding: 8px 0;
+    		width: 100%;
+			h2{
+				font-weight: bold;
+				text-indent: 1em;
+				float: left;
+			}
+			p.all-categories{
+				color: #498586;
+				margin: 0;
+				float: right;
+				padding: 3px 15px 0 0;
+				font-size: 0.8em;
+				&:hover{
+					text-decoration: underline;
+					cursor: pointer;
+				}
+			}
+		}
+		div.border-top{
+			border-top: 1px solid $dropdown-toggle-bg-color;
+		}
+		div.border-bottom{
+			border-bottom: 1px solid $dropdown-toggle-bg-color;
+		}
+		label{
+			width:50%;
+			font-size: 0.8em;
+			line-height: 0;
+			padding-bottom: 6px;
+			display: block;
+			float: left;
+			input{
+				height: 23px;
+			}
+		}
+		div.top-categories{
+			padding: 5px 15px 10px 15px;
+		}
+		div.more-categories{
+			height: 105px;
+			margin: 5px 15px 10px 15px;
+    		overflow: auto;
+		}
+	}
+}

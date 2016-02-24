@@ -1,0 +1,14 @@
+<div class="geo-autocomplete">
+	<input 
+		name="geolocation"
+		class="geolocation" 
+		placeholder="Location" 
+		ng-model="geolocation" 
+		ng-change="suggest(geolocation)" />
+	<ul class="geo-suggestions">
+		<li ng-repeat="location in locationList" 
+			ng-click="selectLocation(location)">
+			{{location}}
+		</li>
+	</ul>
+</div>
